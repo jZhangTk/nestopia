@@ -105,6 +105,8 @@ void nstsdl_input_match_keyboard(Input::Controllers *controllers, SDL_Event even
 	if (event.type == SDL_KEYDOWN) { input.pressed = 1; }
 
 	for (int i = 0; i < NUMGAMEPADS; i++) {
+    input.nescode = 0x00;
+
 		if (player[i].u == event.key.keysym.scancode) {
 			input.nescode = Input::Controllers::Pad::UP;
 			input.player = i;
@@ -147,9 +149,10 @@ void nstsdl_input_match_keyboard(Input::Controllers *controllers, SDL_Event even
 			input.player = i;
 			input.turbob = 1;
 		}
+
+    if (0x00 != input.nescode) { nst_input_inject(controllers, input); }
 	}
 
-	nst_input_inject(controllers, input);
 	
 	if (event.key.keysym.scancode == ui.ffspeed && event.type == SDL_KEYDOWN) { nst_timing_set_ffspeed(); }
 	if (event.key.keysym.scancode == ui.ffspeed && event.type == SDL_KEYUP) { nst_timing_set_default(); }
