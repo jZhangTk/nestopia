@@ -10,6 +10,7 @@
 *.js
 *.bc
 .npmignore
+.clangd/
 
 # Autotools cruft
 Makefile
