@@ -195,7 +195,7 @@ void config_set_default() {
 	
 	// Timing
 	conf.timing_speed = 60;
-	conf.timing_ffspeed = 3;
+	conf.timing_ffspeed = 10;
 	conf.timing_turbopulse = 3;
 	conf.timing_vsync = true;
 	conf.timing_limiter = true;
