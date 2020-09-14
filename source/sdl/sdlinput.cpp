@@ -390,24 +390,24 @@ void nstsdl_input_conf_defaults() {
 	
 	ui.reset = SDL_GetScancodeFromName("F12");
 	
-	ui.ffspeed = SDL_GetScancodeFromName("`");
+	ui.ffspeed = SDL_GetScancodeFromName("Left Ctrl");
 	ui.rwstart = SDL_GetScancodeFromName("Backspace");
 	ui.rwstop = SDL_GetScancodeFromName("\\");
 	
-	ui.fullscreen = SDL_GetScancodeFromName("F");
-	ui.filter = SDL_GetScancodeFromName("T");
-	ui.scalefactor = SDL_GetScancodeFromName("G");
+	ui.fullscreen = SDL_GetScancodeFromName("F11");
+	ui.filter = SDL_GetScancodeFromName("`");
+	ui.scalefactor = SDL_GetScancodeFromName("F10");
 	
-	player[0].u = SDL_GetScancodeFromName("Up");
-	player[0].d = SDL_GetScancodeFromName("Down");
-	player[0].l = SDL_GetScancodeFromName("Left");
-	player[0].r = SDL_GetScancodeFromName("Right");
-	player[0].select = SDL_GetScancodeFromName("Right Shift");
-	player[0].start = SDL_GetScancodeFromName("Return");
-	player[0].a = SDL_GetScancodeFromName("Z");
-	player[0].b = SDL_GetScancodeFromName("A");
-	player[0].ta = SDL_GetScancodeFromName("X");
-	player[0].tb = SDL_GetScancodeFromName("S");
+	player[0].u = SDL_GetScancodeFromName("E");
+	player[0].d = SDL_GetScancodeFromName("D");
+	player[0].l = SDL_GetScancodeFromName("S");
+	player[0].r = SDL_GetScancodeFromName("F");
+	player[0].select = SDL_GetScancodeFromName("G");
+	player[0].start = SDL_GetScancodeFromName("H");
+	player[0].a = SDL_GetScancodeFromName("K");
+	player[0].b = SDL_GetScancodeFromName("J");
+	player[0].ta = SDL_GetScancodeFromName("I");
+	player[0].tb = SDL_GetScancodeFromName("U");
 
 	player[0].ju = nstsdl_input_translate_string("j0h01");
 	player[0].jd = nstsdl_input_translate_string("j0h04");
@@ -423,16 +423,16 @@ void nstsdl_input_conf_defaults() {
 	player[0].rwstart = nstsdl_input_translate_string("j0b4");
 	player[0].rwstop = nstsdl_input_translate_string("j0b5");
 	
-	player[1].u = SDL_GetScancodeFromName("I");
-	player[1].d = SDL_GetScancodeFromName("K");
-	player[1].l = SDL_GetScancodeFromName("J");
-	player[1].r = SDL_GetScancodeFromName("L");
-	player[1].select = SDL_GetScancodeFromName("Left Shift");
-	player[1].start = SDL_GetScancodeFromName("Left Ctrl");
-	player[1].a = SDL_GetScancodeFromName("M");
-	player[1].b = SDL_GetScancodeFromName("N");
-	player[1].ta = SDL_GetScancodeFromName("B");
-	player[1].tb = SDL_GetScancodeFromName("V");
+	player[1].u = SDL_GetScancodeFromName("E");
+	player[1].d = SDL_GetScancodeFromName("D");
+	player[1].l = SDL_GetScancodeFromName("S");
+	player[1].r = SDL_GetScancodeFromName("F");
+	player[1].select = SDL_GetScancodeFromName("G");
+	player[1].start = SDL_GetScancodeFromName("H");
+	player[1].a = SDL_GetScancodeFromName("K");
+	player[1].b = SDL_GetScancodeFromName("J");
+	player[1].ta = SDL_GetScancodeFromName("I");
+	player[1].tb = SDL_GetScancodeFromName("U");
 	
 	player[1].ju = nstsdl_input_translate_string("j1h01");
 	player[1].jd = nstsdl_input_translate_string("j1h04");
