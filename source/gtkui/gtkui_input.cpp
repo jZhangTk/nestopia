@@ -50,8 +50,24 @@ static int gtkui_input_config_match(void* user, const char* section, const char*
 	// User Interface
 	if (MATCH("ui", "qsave1")) { pconfig->qsave1 = strdup(value); }
 	else if (MATCH("ui", "qsave2")) { pconfig->qsave2 = strdup(value); }
+	else if (MATCH("ui", "qsave3")) { pconfig->qsave3 = strdup(value); }
+	else if (MATCH("ui", "qsave4")) { pconfig->qsave4 = strdup(value); }
+	else if (MATCH("ui", "qsave5")) { pconfig->qsave5 = strdup(value); }
+	else if (MATCH("ui", "qsave6")) { pconfig->qsave6 = strdup(value); }
+	else if (MATCH("ui", "qsave7")) { pconfig->qsave7 = strdup(value); }
+	else if (MATCH("ui", "qsave8")) { pconfig->qsave8 = strdup(value); }
+	else if (MATCH("ui", "qsave9")) { pconfig->qsave9 = strdup(value); }
+	else if (MATCH("ui", "qsave0")) { pconfig->qsave0 = strdup(value); }
 	else if (MATCH("ui", "qload1")) { pconfig->qload1 = strdup(value); }
 	else if (MATCH("ui", "qload2")) { pconfig->qload2 = strdup(value); }
+	else if (MATCH("ui", "qload3")) { pconfig->qload3 = strdup(value); }
+	else if (MATCH("ui", "qload4")) { pconfig->qload4 = strdup(value); }
+	else if (MATCH("ui", "qload5")) { pconfig->qload5 = strdup(value); }
+	else if (MATCH("ui", "qload6")) { pconfig->qload6 = strdup(value); }
+	else if (MATCH("ui", "qload7")) { pconfig->qload7 = strdup(value); }
+	else if (MATCH("ui", "qload8")) { pconfig->qload8 = strdup(value); }
+	else if (MATCH("ui", "qload9")) { pconfig->qload9 = strdup(value); }
+	else if (MATCH("ui", "qload0")) { pconfig->qload0 = strdup(value); }
 	else if (MATCH("ui", "screenshot")) { pconfig->screenshot = strdup(value); }
 	else if (MATCH("ui", "fdsflip")) { pconfig->fdsflip = strdup(value); }
 	else if (MATCH("ui", "fdsswitch")) { pconfig->fdsswitch = strdup(value); }
@@ -120,22 +136,38 @@ void gtkui_input_set_default() {
 	pad[1].tb = GDK_KEY_v;
 	
 	// User Interface
-	ui.qsave1 = GDK_KEY_F5;
-	ui.qsave2 = GDK_KEY_F6;
-	ui.qload1 = GDK_KEY_F7;
-	ui.qload2 = GDK_KEY_F8;
+	ui.qsave1 = GDK_KEY_1;
+	ui.qsave2 = GDK_KEY_2;
+	ui.qsave3 = GDK_KEY_3;
+	ui.qsave4 = GDK_KEY_4;
+	ui.qsave5 = GDK_KEY_5;
+	ui.qsave6 = GDK_KEY_6;
+	ui.qsave7 = GDK_KEY_7;
+	ui.qsave8 = GDK_KEY_8;
+	ui.qsave9 = GDK_KEY_9;
+	ui.qsave0 = GDK_KEY_0;
+	ui.qload1 = GDK_KEY_z;
+	ui.qload2 = GDK_KEY_x;
+	ui.qload3 = GDK_KEY_c;
+	ui.qload4 = GDK_KEY_v;
+	ui.qload5 = GDK_KEY_b;
+	ui.qload6 = GDK_KEY_n;
+	ui.qload7 = GDK_KEY_m;
+	ui.qload8 = GDK_KEY_comma;
+	ui.qload9 = GDK_KEY_period;
+	ui.qload0 = GDK_KEY_slash;
 	ui.screenshot = GDK_KEY_F9;
 	ui.fdsflip = GDK_KEY_F3;
 	ui.fdsswitch = GDK_KEY_F4;
 	ui.insertcoin1 = GDK_KEY_F1;
 	ui.insertcoin2 = GDK_KEY_F2;
 	ui.reset = GDK_KEY_F12;
-	ui.ffspeed = GDK_KEY_grave;
+	ui.ffspeed = GDK_KEY_Control_L;
 	ui.rwstart = GDK_KEY_BackSpace;
 	ui.rwstop = GDK_KEY_backslash;
-	ui.fullscreen = GDK_KEY_f;
-	ui.filter = GDK_KEY_t;
-	ui.scalefactor = GDK_KEY_g;
+	ui.fullscreen = GDK_KEY_F11;
+	ui.filter = GDK_KEY_grave;
+	ui.scalefactor = GDK_KEY_F10;
 }
 
 void gtkui_input_config_read() {
@@ -150,8 +182,24 @@ void gtkui_input_config_read() {
 		// User Interface
 		ui.qsave1 = gdk_keyval_from_name(inputconf.qsave1);
 		ui.qsave2 = gdk_keyval_from_name(inputconf.qsave2);
+		ui.qsave3 = gdk_keyval_from_name(inputconf.qsave3);
+		ui.qsave4 = gdk_keyval_from_name(inputconf.qsave4);
+		ui.qsave5 = gdk_keyval_from_name(inputconf.qsave5);
+		ui.qsave6 = gdk_keyval_from_name(inputconf.qsave6);
+		ui.qsave7 = gdk_keyval_from_name(inputconf.qsave7);
+		ui.qsave8 = gdk_keyval_from_name(inputconf.qsave8);
+		ui.qsave9 = gdk_keyval_from_name(inputconf.qsave9);
+		ui.qsave0 = gdk_keyval_from_name(inputconf.qsave0);
 		ui.qload1 = gdk_keyval_from_name(inputconf.qload1);
 		ui.qload2 = gdk_keyval_from_name(inputconf.qload2);
+		ui.qload3 = gdk_keyval_from_name(inputconf.qload3);
+		ui.qload4 = gdk_keyval_from_name(inputconf.qload4);
+		ui.qload5 = gdk_keyval_from_name(inputconf.qload5);
+		ui.qload6 = gdk_keyval_from_name(inputconf.qload6);
+		ui.qload7 = gdk_keyval_from_name(inputconf.qload7);
+		ui.qload8 = gdk_keyval_from_name(inputconf.qload8);
+		ui.qload9 = gdk_keyval_from_name(inputconf.qload9);
+		ui.qload0 = gdk_keyval_from_name(inputconf.qload0);
 		ui.screenshot = gdk_keyval_from_name(inputconf.screenshot);
 		ui.fdsflip = gdk_keyval_from_name(inputconf.fdsflip);
 		ui.fdsswitch = gdk_keyval_from_name(inputconf.fdsswitch);
@@ -202,8 +250,24 @@ void gtkui_input_config_write() {
 		fprintf(fp, "[ui]\n");
 		fprintf(fp, "qsave1=%s\n", gdk_keyval_name(ui.qsave1));
 		fprintf(fp, "qsave2=%s\n", gdk_keyval_name(ui.qsave2));
+		fprintf(fp, "qsave3=%s\n", gdk_keyval_name(ui.qsave3));
+		fprintf(fp, "qsave4=%s\n", gdk_keyval_name(ui.qsave4));
+		fprintf(fp, "qsave5=%s\n", gdk_keyval_name(ui.qsave5));
+		fprintf(fp, "qsave6=%s\n", gdk_keyval_name(ui.qsave6));
+		fprintf(fp, "qsave7=%s\n", gdk_keyval_name(ui.qsave7));
+		fprintf(fp, "qsave8=%s\n", gdk_keyval_name(ui.qsave8));
+		fprintf(fp, "qsave9=%s\n", gdk_keyval_name(ui.qsave9));
+		fprintf(fp, "qsave0=%s\n", gdk_keyval_name(ui.qsave0));
 		fprintf(fp, "qload1=%s\n", gdk_keyval_name(ui.qload1));
 		fprintf(fp, "qload2=%s\n", gdk_keyval_name(ui.qload2));
+		fprintf(fp, "qload3=%s\n", gdk_keyval_name(ui.qload3));
+		fprintf(fp, "qload4=%s\n", gdk_keyval_name(ui.qload4));
+		fprintf(fp, "qload5=%s\n", gdk_keyval_name(ui.qload5));
+		fprintf(fp, "qload6=%s\n", gdk_keyval_name(ui.qload6));
+		fprintf(fp, "qload7=%s\n", gdk_keyval_name(ui.qload7));
+		fprintf(fp, "qload8=%s\n", gdk_keyval_name(ui.qload8));
+		fprintf(fp, "qload9=%s\n", gdk_keyval_name(ui.qload9));
+		fprintf(fp, "qload0=%s\n", gdk_keyval_name(ui.qload0));
 		fprintf(fp, "screenshot=%s\n", gdk_keyval_name(ui.screenshot));
 		fprintf(fp, "fdsflip=%s\n", gdk_keyval_name(ui.fdsflip));
 		fprintf(fp, "fdsswitch=%s\n", gdk_keyval_name(ui.fdsswitch));
@@ -332,10 +396,26 @@ int gtkui_input_process_key(GtkWidget *widget, GdkEventKey *event, gpointer user
 			//printf("Keyval: %x\n", event->keyval);
 			//printf("Keyval: %s\n", gdk_keyval_name(event->keyval));
 			input.pressed = 1;
-			if (event->keyval == ui.qsave1) { nst_state_quicksave(0); }
-			else if (event->keyval == ui.qsave2) { nst_state_quicksave(1); }
-			else if (event->keyval == ui.qload1) { nst_state_quickload(0); }
-			else if (event->keyval == ui.qload2) { nst_state_quickload(1); }
+			if (event->keyval == ui.qsave1) { nst_state_quicksave(1); }
+			else if (event->keyval == ui.qsave2) { nst_state_quicksave(2); }
+			else if (event->keyval == ui.qsave3) { nst_state_quicksave(3); }
+			else if (event->keyval == ui.qsave4) { nst_state_quicksave(4); }
+			else if (event->keyval == ui.qsave5) { nst_state_quicksave(5); }
+			else if (event->keyval == ui.qsave6) { nst_state_quicksave(6); }
+			else if (event->keyval == ui.qsave7) { nst_state_quicksave(7); }
+			else if (event->keyval == ui.qsave8) { nst_state_quicksave(8); }
+			else if (event->keyval == ui.qsave9) { nst_state_quicksave(9); }
+			else if (event->keyval == ui.qsave0) { nst_state_quicksave(0); }
+			else if (event->keyval == ui.qload1) { nst_state_quickload(1); }
+			else if (event->keyval == ui.qload2) { nst_state_quickload(2); }
+			else if (event->keyval == ui.qload3) { nst_state_quickload(3); }
+			else if (event->keyval == ui.qload4) { nst_state_quickload(4); }
+			else if (event->keyval == ui.qload5) { nst_state_quickload(5); }
+			else if (event->keyval == ui.qload6) { nst_state_quickload(6); }
+			else if (event->keyval == ui.qload7) { nst_state_quickload(7); }
+			else if (event->keyval == ui.qload8) { nst_state_quickload(8); }
+			else if (event->keyval == ui.qload9) { nst_state_quickload(9); }
+			else if (event->keyval == ui.qload0) { nst_state_quickload(0); }
 			else if (event->keyval == ui.screenshot) { video_screenshot(NULL); }
 			else if (event->keyval == ui.fdsflip) { nst_fds_flip(); }
 			else if (event->keyval == ui.fdsswitch) { nst_fds_switch(); }

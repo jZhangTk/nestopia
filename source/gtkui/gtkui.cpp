@@ -178,6 +178,11 @@ void gtkui_create() {
 		GtkWidget *qload2 = gtk_menu_item_new_with_label("2");
 		GtkWidget *qload3 = gtk_menu_item_new_with_label("3");
 		GtkWidget *qload4 = gtk_menu_item_new_with_label("4");
+		GtkWidget *qload5 = gtk_menu_item_new_with_label("5");
+		GtkWidget *qload6 = gtk_menu_item_new_with_label("6");
+		GtkWidget *qload7 = gtk_menu_item_new_with_label("7");
+		GtkWidget *qload8 = gtk_menu_item_new_with_label("8");
+		GtkWidget *qload9 = gtk_menu_item_new_with_label("9");
 	
 	GtkWidget *quicksave = gtk_menu_item_new_with_label("Quick Save");
 	GtkWidget *qsavemenu = gtk_menu_new();
@@ -186,6 +191,11 @@ void gtkui_create() {
 		GtkWidget *qsave2 = gtk_menu_item_new_with_label("2");
 		GtkWidget *qsave3 = gtk_menu_item_new_with_label("3");
 		GtkWidget *qsave4 = gtk_menu_item_new_with_label("4");
+		GtkWidget *qsave5 = gtk_menu_item_new_with_label("5");
+		GtkWidget *qsave6 = gtk_menu_item_new_with_label("6");
+		GtkWidget *qsave7 = gtk_menu_item_new_with_label("7");
+		GtkWidget *qsave8 = gtk_menu_item_new_with_label("8");
+		GtkWidget *qsave9 = gtk_menu_item_new_with_label("9");
 	
 	GtkWidget *sep_state = gtk_separator_menu_item_new();
 	GtkWidget *palette = gtk_menu_item_new_with_label("Open Palette...");
@@ -234,6 +244,11 @@ void gtkui_create() {
 		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload2);
 		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload3);
 		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload4);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload5);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload6);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload7);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload8);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qloadmenu), qload9);
 	gtk_menu_shell_append(GTK_MENU_SHELL(filemenu), quicksave);
 		gtk_menu_item_set_submenu(GTK_MENU_ITEM(quicksave), qsavemenu);
 		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave0);
@@ -241,6 +256,11 @@ void gtkui_create() {
 		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave2);
 		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave3);
 		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave4);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave5);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave6);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave7);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave8);
+		gtk_menu_shell_append(GTK_MENU_SHELL(qsavemenu), qsave9);
 	gtk_menu_shell_append(GTK_MENU_SHELL(filemenu), sep_state);
 	gtk_menu_shell_append(GTK_MENU_SHELL(filemenu), palette);
 	gtk_menu_shell_append(GTK_MENU_SHELL(filemenu), sep_palette);
@@ -367,6 +387,21 @@ void gtkui_create() {
 	g_signal_connect(G_OBJECT(qload4), "activate",
 		G_CALLBACK(gtkui_state_quickload), gpointer(4));
 	
+	g_signal_connect(G_OBJECT(qload5), "activate",
+		G_CALLBACK(gtkui_state_quickload), gpointer(5));
+	
+	g_signal_connect(G_OBJECT(qload6), "activate",
+		G_CALLBACK(gtkui_state_quickload), gpointer(6));
+	
+	g_signal_connect(G_OBJECT(qload7), "activate",
+		G_CALLBACK(gtkui_state_quickload), gpointer(7));
+	
+	g_signal_connect(G_OBJECT(qload8), "activate",
+		G_CALLBACK(gtkui_state_quickload), gpointer(8));
+	
+	g_signal_connect(G_OBJECT(qload9), "activate",
+		G_CALLBACK(gtkui_state_quickload), gpointer(9));
+	
 	g_signal_connect(G_OBJECT(qsave0), "activate",
 		G_CALLBACK(gtkui_state_quicksave), gpointer(0));
 	
@@ -381,6 +416,21 @@ void gtkui_create() {
 	
 	g_signal_connect(G_OBJECT(qsave4), "activate",
 		G_CALLBACK(gtkui_state_quicksave), gpointer(4));
+  
+	g_signal_connect(G_OBJECT(qsave5), "activate",
+		G_CALLBACK(gtkui_state_quicksave), gpointer(5));
+	
+	g_signal_connect(G_OBJECT(qsave6), "activate",
+		G_CALLBACK(gtkui_state_quicksave), gpointer(6));
+	
+	g_signal_connect(G_OBJECT(qsave7), "activate",
+		G_CALLBACK(gtkui_state_quicksave), gpointer(7));
+	
+	g_signal_connect(G_OBJECT(qsave8), "activate",
+		G_CALLBACK(gtkui_state_quicksave), gpointer(8));
+	
+	g_signal_connect(G_OBJECT(qsave9), "activate",
+		G_CALLBACK(gtkui_state_quicksave), gpointer(9));
 	
 	g_signal_connect(G_OBJECT(screenshot), "activate",
 		G_CALLBACK(gtkui_screenshot_save), NULL);

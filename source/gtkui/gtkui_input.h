@@ -17,8 +17,24 @@ typedef struct {
 typedef struct {
 	guint qsave1;
 	guint qsave2;
+	guint qsave3;
+	guint qsave4;
+	guint qsave5;
+	guint qsave6;
+	guint qsave7;
+	guint qsave8;
+	guint qsave9;
+	guint qsave0;
 	guint qload1;
 	guint qload2;
+	guint qload3;
+	guint qload4;
+	guint qload5;
+	guint qload6;
+	guint qload7;
+	guint qload8;
+	guint qload9;
+	guint qload0;
 	guint screenshot;
 	guint fdsflip;
 	guint fdsswitch;
@@ -37,8 +53,24 @@ typedef struct {
 	// User Interface
 	char *qsave1;
 	char *qsave2;
+	char *qsave3;
+	char *qsave4;
+	char *qsave5;
+	char *qsave6;
+	char *qsave7;
+	char *qsave8;
+	char *qsave9;
+	char *qsave0;
 	char *qload1;
 	char *qload2;
+	char *qload3;
+	char *qload4;
+	char *qload5;
+	char *qload6;
+	char *qload7;
+	char *qload8;
+	char *qload9;
+	char *qload0;
 	
 	char *screenshot;
 	

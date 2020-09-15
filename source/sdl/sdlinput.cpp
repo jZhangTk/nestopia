@@ -171,10 +171,26 @@ void nstsdl_input_match_keyboard(Input::Controllers *controllers, SDL_Event even
 	// Process non-game events
 	if (keys[ui.fdsflip]) { nst_fds_flip(); }
 	if (keys[ui.fdsswitch]) { nst_fds_switch(); }
-	if (keys[ui.qsave1]) { nst_state_quicksave(0); }
-	if (keys[ui.qsave2]) { nst_state_quicksave(1); }
-	if (keys[ui.qload1]) { nst_state_quickload(0); }
-	if (keys[ui.qload2]) { nst_state_quickload(1); }
+	if (keys[ui.qsave1]) { nst_state_quicksave(1); }
+	if (keys[ui.qsave2]) { nst_state_quicksave(2); }
+	if (keys[ui.qsave3]) { nst_state_quicksave(3); }
+	if (keys[ui.qsave4]) { nst_state_quicksave(4); }
+	if (keys[ui.qsave5]) { nst_state_quicksave(5); }
+	if (keys[ui.qsave6]) { nst_state_quicksave(6); }
+	if (keys[ui.qsave7]) { nst_state_quicksave(7); }
+	if (keys[ui.qsave8]) { nst_state_quicksave(8); }
+	if (keys[ui.qsave9]) { nst_state_quicksave(9); }
+	if (keys[ui.qsave0]) { nst_state_quicksave(0); }
+	if (keys[ui.qload1]) { nst_state_quickload(1); }
+	if (keys[ui.qload2]) { nst_state_quickload(2); }
+	if (keys[ui.qload3]) { nst_state_quickload(3); }
+	if (keys[ui.qload4]) { nst_state_quickload(4); }
+	if (keys[ui.qload5]) { nst_state_quickload(5); }
+	if (keys[ui.qload6]) { nst_state_quickload(6); }
+	if (keys[ui.qload7]) { nst_state_quickload(7); }
+	if (keys[ui.qload8]) { nst_state_quickload(8); }
+	if (keys[ui.qload9]) { nst_state_quickload(9); }
+	if (keys[ui.qload0]) { nst_state_quickload(0); }
 	
 	// Screenshot
 	if (keys[ui.screenshot]) { video_screenshot(NULL); }
@@ -375,10 +391,26 @@ void nstsdl_input_match_joystick(Input::Controllers *controllers, SDL_Event even
 
 void nstsdl_input_conf_defaults() {
 	// Set default input config
-	ui.qsave1 = SDL_GetScancodeFromName("F5");
-	ui.qsave2 = SDL_GetScancodeFromName("F6");
-	ui.qload1 = SDL_GetScancodeFromName("F7");
-	ui.qload2 = SDL_GetScancodeFromName("F8");
+	ui.qsave1 = SDL_GetScancodeFromName("1");
+	ui.qsave2 = SDL_GetScancodeFromName("2");
+	ui.qsave3 = SDL_GetScancodeFromName("3");
+	ui.qsave4 = SDL_GetScancodeFromName("4");
+	ui.qsave5 = SDL_GetScancodeFromName("5");
+	ui.qsave6 = SDL_GetScancodeFromName("6");
+	ui.qsave7 = SDL_GetScancodeFromName("7");
+	ui.qsave8 = SDL_GetScancodeFromName("8");
+	ui.qsave9 = SDL_GetScancodeFromName("9");
+	ui.qsave0 = SDL_GetScancodeFromName("0");
+	ui.qload1 = SDL_GetScancodeFromName("z");
+	ui.qload2 = SDL_GetScancodeFromName("x");
+	ui.qload3 = SDL_GetScancodeFromName("c");
+	ui.qload4 = SDL_GetScancodeFromName("v");
+	ui.qload5 = SDL_GetScancodeFromName("b");
+	ui.qload6 = SDL_GetScancodeFromName("n");
+	ui.qload7 = SDL_GetScancodeFromName("m");
+	ui.qload8 = SDL_GetScancodeFromName(",");
+	ui.qload9 = SDL_GetScancodeFromName(".");
+	ui.qload0 = SDL_GetScancodeFromName("/");
 	
 	ui.screenshot = SDL_GetScancodeFromName("F9");
 	
@@ -487,8 +519,24 @@ static int nstsdl_input_config_match(void* user, const char* section, const char
 	// User Interface
 	if (MATCH("ui", "qsave1")) { pconfig->qsave1 = strdup(value); }
 	else if (MATCH("ui", "qsave2")) { pconfig->qsave2 = strdup(value); }
+	else if (MATCH("ui", "qsave3")) { pconfig->qsave3 = strdup(value); }
+	else if (MATCH("ui", "qsave4")) { pconfig->qsave4 = strdup(value); }
+	else if (MATCH("ui", "qsave5")) { pconfig->qsave5 = strdup(value); }
+	else if (MATCH("ui", "qsave6")) { pconfig->qsave6 = strdup(value); }
+	else if (MATCH("ui", "qsave7")) { pconfig->qsave7 = strdup(value); }
+	else if (MATCH("ui", "qsave8")) { pconfig->qsave8 = strdup(value); }
+	else if (MATCH("ui", "qsave9")) { pconfig->qsave9 = strdup(value); }
+	else if (MATCH("ui", "qsave0")) { pconfig->qsave0 = strdup(value); }
 	else if (MATCH("ui", "qload1")) { pconfig->qload1 = strdup(value); }
 	else if (MATCH("ui", "qload2")) { pconfig->qload2 = strdup(value); }
+	else if (MATCH("ui", "qload3")) { pconfig->qload3 = strdup(value); }
+	else if (MATCH("ui", "qload4")) { pconfig->qload4 = strdup(value); }
+	else if (MATCH("ui", "qload5")) { pconfig->qload5 = strdup(value); }
+	else if (MATCH("ui", "qload6")) { pconfig->qload6 = strdup(value); }
+	else if (MATCH("ui", "qload7")) { pconfig->qload7 = strdup(value); }
+	else if (MATCH("ui", "qload8")) { pconfig->qload8 = strdup(value); }
+	else if (MATCH("ui", "qload9")) { pconfig->qload9 = strdup(value); }
+	else if (MATCH("ui", "qload0")) { pconfig->qload0 = strdup(value); }
 	
 	else if (MATCH("ui", "screenshot")) { pconfig->screenshot = strdup(value); }
 	
@@ -572,8 +620,24 @@ void nstsdl_input_conf_read() {
 		// User Interface
 		ui.qsave1 = SDL_GetScancodeFromName(inputconf.qsave1);
 		ui.qsave2 = SDL_GetScancodeFromName(inputconf.qsave2);
+		ui.qsave3 = SDL_GetScancodeFromName(inputconf.qsave3);
+		ui.qsave4 = SDL_GetScancodeFromName(inputconf.qsave4);
+		ui.qsave5 = SDL_GetScancodeFromName(inputconf.qsave5);
+		ui.qsave6 = SDL_GetScancodeFromName(inputconf.qsave6);
+		ui.qsave7 = SDL_GetScancodeFromName(inputconf.qsave7);
+		ui.qsave8 = SDL_GetScancodeFromName(inputconf.qsave8);
+		ui.qsave9 = SDL_GetScancodeFromName(inputconf.qsave9);
+		ui.qsave0 = SDL_GetScancodeFromName(inputconf.qsave0);
 		ui.qload1 = SDL_GetScancodeFromName(inputconf.qload1);
 		ui.qload2 = SDL_GetScancodeFromName(inputconf.qload2);
+		ui.qload3 = SDL_GetScancodeFromName(inputconf.qload3);
+		ui.qload4 = SDL_GetScancodeFromName(inputconf.qload4);
+		ui.qload5 = SDL_GetScancodeFromName(inputconf.qload5);
+		ui.qload6 = SDL_GetScancodeFromName(inputconf.qload6);
+		ui.qload7 = SDL_GetScancodeFromName(inputconf.qload7);
+		ui.qload8 = SDL_GetScancodeFromName(inputconf.qload8);
+		ui.qload9 = SDL_GetScancodeFromName(inputconf.qload9);
+		ui.qload0 = SDL_GetScancodeFromName(inputconf.qload0);
 		
 		ui.screenshot = SDL_GetScancodeFromName(inputconf.screenshot);
 		
@@ -658,8 +722,24 @@ void nstsdl_input_conf_write() {
 		fprintf(fp, "[ui]\n");
 		fprintf(fp, "qsave1=%s\n", SDL_GetScancodeName(ui.qsave1));
 		fprintf(fp, "qsave2=%s\n", SDL_GetScancodeName(ui.qsave2));
+		fprintf(fp, "qsave3=%s\n", SDL_GetScancodeName(ui.qsave3));
+		fprintf(fp, "qsave4=%s\n", SDL_GetScancodeName(ui.qsave4));
+		fprintf(fp, "qsave5=%s\n", SDL_GetScancodeName(ui.qsave5));
+		fprintf(fp, "qsave6=%s\n", SDL_GetScancodeName(ui.qsave6));
+		fprintf(fp, "qsave7=%s\n", SDL_GetScancodeName(ui.qsave7));
+		fprintf(fp, "qsave8=%s\n", SDL_GetScancodeName(ui.qsave8));
+		fprintf(fp, "qsave9=%s\n", SDL_GetScancodeName(ui.qsave9));
+		fprintf(fp, "qsave0=%s\n", SDL_GetScancodeName(ui.qsave0));
 		fprintf(fp, "qload1=%s\n", SDL_GetScancodeName(ui.qload1));
 		fprintf(fp, "qload2=%s\n", SDL_GetScancodeName(ui.qload2));
+		fprintf(fp, "qload3=%s\n", SDL_GetScancodeName(ui.qload3));
+		fprintf(fp, "qload4=%s\n", SDL_GetScancodeName(ui.qload4));
+		fprintf(fp, "qload5=%s\n", SDL_GetScancodeName(ui.qload5));
+		fprintf(fp, "qload6=%s\n", SDL_GetScancodeName(ui.qload6));
+		fprintf(fp, "qload7=%s\n", SDL_GetScancodeName(ui.qload7));
+		fprintf(fp, "qload8=%s\n", SDL_GetScancodeName(ui.qload8));
+		fprintf(fp, "qload9=%s\n", SDL_GetScancodeName(ui.qload9));
+		fprintf(fp, "qload0=%s\n", SDL_GetScancodeName(ui.qload0));
 		
 		fprintf(fp, "screenshot=%s\n", SDL_GetScancodeName(ui.screenshot));
 		

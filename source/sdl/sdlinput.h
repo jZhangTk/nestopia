@@ -35,8 +35,24 @@ typedef struct {
 typedef struct {
 	SDL_Scancode qsave1;
 	SDL_Scancode qsave2;
+	SDL_Scancode qsave3;
+	SDL_Scancode qsave4;
+	SDL_Scancode qsave5;
+	SDL_Scancode qsave6;
+	SDL_Scancode qsave7;
+	SDL_Scancode qsave8;
+	SDL_Scancode qsave9;
+	SDL_Scancode qsave0;
 	SDL_Scancode qload1;
 	SDL_Scancode qload2;
+	SDL_Scancode qload3;
+	SDL_Scancode qload4;
+	SDL_Scancode qload5;
+	SDL_Scancode qload6;
+	SDL_Scancode qload7;
+	SDL_Scancode qload8;
+	SDL_Scancode qload9;
+	SDL_Scancode qload0;
 	
 	SDL_Scancode screenshot;
 	
@@ -61,8 +77,24 @@ typedef struct {
 	// User Interface
 	char *qsave1;
 	char *qsave2;
+	char *qsave3;
+	char *qsave4;
+	char *qsave5;
+	char *qsave6;
+	char *qsave7;
+	char *qsave8;
+	char *qsave9;
+	char *qsave0;
 	char *qload1;
 	char *qload2;
+	char *qload3;
+	char *qload4;
+	char *qload5;
+	char *qload6;
+	char *qload7;
+	char *qload8;
+	char *qload9;
+	char *qload0;
 	
 	char *screenshot;
 	
