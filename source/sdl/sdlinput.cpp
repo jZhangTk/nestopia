@@ -430,7 +430,7 @@ void nstsdl_input_conf_defaults() {
 	ui.rwstop = SDL_GetScancodeFromName("\\");
 	
 	ui.fullscreen = SDL_GetScancodeFromName("F11");
-	ui.filter = SDL_GetScancodeFromName("`");
+	ui.filter = SDL_GetScancodeFromName("F8");
 	ui.scalefactor = SDL_GetScancodeFromName("F10");
 	
 	player[0].u = SDL_GetScancodeFromName("E");
