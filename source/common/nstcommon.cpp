@@ -826,6 +826,10 @@ int nst_timing_runframes() {
 	return 1;
 }
 
+void nst_timing_toggle_ffspeed() {
+	ffspeed = !ffspeed;
+}
+
 void nst_timing_set_ffspeed() {
 	// Set the framerate to the fast-forward speed
 	ffspeed = true;
