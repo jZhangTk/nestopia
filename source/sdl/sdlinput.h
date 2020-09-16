@@ -65,6 +65,8 @@ typedef struct {
 	SDL_Scancode reset;
 	
 	SDL_Scancode ffspeedtoggle;
+	SDL_Scancode incrementffspeed;
+	SDL_Scancode decrementffspeed;
 	SDL_Scancode ffspeed;
 	SDL_Scancode rwstart;
 	SDL_Scancode rwstop;
@@ -108,6 +110,8 @@ typedef struct {
 	char *reset;
 	
 	char *ffspeedtoggle;
+	char *incrementffspeed;
+	char *decrementffspeed;
 	char *ffspeed;
 	char *rwstart;
 	char *rwstop;

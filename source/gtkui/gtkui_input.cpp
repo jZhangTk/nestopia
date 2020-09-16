@@ -75,6 +75,8 @@ static int gtkui_input_config_match(void* user, const char* section, const char*
 	else if (MATCH("ui", "insertcoin2")) { pconfig->insertcoin2 = strdup(value); }
 	else if (MATCH("ui", "reset")) { pconfig->reset = strdup(value); }
 	else if (MATCH("ui", "ffspeedtoggle")) { pconfig->ffspeedtoggle = strdup(value); }
+	else if (MATCH("ui", "incrementffspeed")) { pconfig->incrementffspeed = strdup(value); }
+	else if (MATCH("ui", "decrementffspeed")) { pconfig->decrementffspeed = strdup(value); }
 	else if (MATCH("ui", "ffspeed")) { pconfig->ffspeed = strdup(value); }
 	else if (MATCH("ui", "rwstart")) { pconfig->rwstart = strdup(value); }
 	else if (MATCH("ui", "rwstop")) { pconfig->rwstop = strdup(value); }
@@ -164,6 +166,8 @@ void gtkui_input_set_default() {
 	ui.insertcoin2 = GDK_KEY_F2;
 	ui.reset = GDK_KEY_F12;
 	ui.ffspeedtoggle = GDK_KEY_F7
+	ui.incrementffspeed = GDK_KEY_F6
+	ui.decrementffspeed = GDK_KEY_F5
 	ui.ffspeed = GDK_KEY_Control_L;
 	ui.rwstart = GDK_KEY_BackSpace;
 	ui.rwstop = GDK_KEY_backslash;
@@ -209,6 +213,8 @@ void gtkui_input_config_read() {
 		ui.insertcoin2 = gdk_keyval_from_name(inputconf.insertcoin2);
 		ui.reset = gdk_keyval_from_name(inputconf.reset);
 		ui.ffspeedtoggle = gdk_keyval_from_name(inputconf.ffspeedtoggle);
+		ui.incrementffspeed = gdk_keyval_from_name(inputconf.incrementffspeed);
+		ui.decrementffspeed = gdk_keyval_from_name(inputconf.decrementffspeed);
 		ui.ffspeed = gdk_keyval_from_name(inputconf.ffspeed);
 		ui.rwstart = gdk_keyval_from_name(inputconf.rwstart);
 		ui.rwstop = gdk_keyval_from_name(inputconf.rwstop);
@@ -278,6 +284,8 @@ void gtkui_input_config_write() {
 		fprintf(fp, "insertcoin2=%s\n", gdk_keyval_name(ui.insertcoin2));
 		fprintf(fp, "reset=%s\n", gdk_keyval_name(ui.reset));
 		fprintf(fp, "ffspeedtoggle=%s\n", gdk_keyval_name(ui.ffspeedtoggle));
+		fprintf(fp, "incrementffspeed=%s\n", gdk_keyval_name(ui.incrementffspeed));
+		fprintf(fp, "decrementffspeed=%s\n", gdk_keyval_name(ui.decrementffspeed));
 		fprintf(fp, "ffspeed=%s\n", gdk_keyval_name(ui.ffspeed));
 		fprintf(fp, "rwstart=%s\n", gdk_keyval_name(ui.rwstart));
 		fprintf(fp, "rwstop=%s\n", gdk_keyval_name(ui.rwstop));
@@ -427,6 +435,8 @@ int gtkui_input_process_key(GtkWidget *widget, GdkEventKey *event, gpointer user
 			else if (event->keyval == ui.insertcoin2) { cNstPads->vsSystem.insertCoin |= Input::Controllers::VsSystem::COIN_2; }
 			else if (event->keyval == ui.reset) { nst_reset(0); }
 			else if (event->keyval == ui.ffspeedtoggle) { nst_timing_toggle_ffspeed(); }
+			else if (event->keyval == ui.incrementffspeed) { nst_increment_timing_ffspeed(); }
+			else if (event->keyval == ui.decrementffspeed) { nst_decrement_timing_ffspeed(); }
 			else if (event->keyval == ui.ffspeed) { nst_timing_set_ffspeed(); }
 			else if (event->keyval == ui.rwstart) { nst_set_rewind(0); }
 			else if (event->keyval == ui.rwstop) { nst_set_rewind(1); }

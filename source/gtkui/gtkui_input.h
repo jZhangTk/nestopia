@@ -42,6 +42,8 @@ typedef struct {
 	guint insertcoin2;
 	guint reset;
 	guint ffspeedtoggle;
+	guint incrementffspeed;
+	guint decrementffspeed;
 	guint ffspeed;
 	guint rwstart;
 	guint rwstop;
@@ -84,6 +86,8 @@ typedef struct {
 	char *reset;
 	
 	char *ffspeedtoggle;
+	char *incrementffspeed;
+	char *decrementffspeed;
 	char *ffspeed;
 	char *rwstart;
 	char *rwstop;

@@ -93,6 +93,8 @@ void nst_state_quickload(int isvst);
 
 // Timing
 int nst_timing_runframes();
+int nst_increment_timing_ffspeed();
+int nst_decrement_timing_ffspeed();
 void nst_timing_toggle_ffspeed();
 void nst_timing_set_ffspeed();
 void nst_timing_set_default();

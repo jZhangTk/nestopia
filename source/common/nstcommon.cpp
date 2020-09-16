@@ -826,7 +826,24 @@ int nst_timing_runframes() {
 	return 1;
 }
 
+int nst_increment_timing_ffspeed() {
+	// Increment timing_ffspeed
+	conf.timing_ffspeed++;
+	fprintf(stderr, "ffspeed Increased to %d\n", conf.timing_ffspeed);
+	nst_video_print("ffspeed Increased", 8, 212, 2, true);
+	return nst_timing_runframes();
+}
+
+int nst_decrement_timing_ffspeed() {
+	// Decrement timing_ffspeed
+	conf.timing_ffspeed--;
+	fprintf(stderr, "ffspeed Decreased to %d\n", conf.timing_ffspeed);
+	nst_video_print("ffspeed Decreased", 8, 212, 2, true);
+	return nst_timing_runframes();
+}
+
 void nst_timing_toggle_ffspeed() {
+	// Flip ffspeed flag
 	ffspeed = !ffspeed;
 }
 

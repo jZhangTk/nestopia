@@ -159,7 +159,10 @@ void nstsdl_input_match_keyboard(Input::Controllers *controllers, SDL_Event even
 	
 	const Uint8 *keys = SDL_GetKeyboardState(NULL);
 	
+	// ffspeed
 	if (keys[ui.ffspeedtoggle]) { nst_timing_toggle_ffspeed(); }
+	if (keys[ui.incrementffspeed]) { nst_increment_timing_ffspeed(); }
+	if (keys[ui.decrementffspeed]) { nst_decrement_timing_ffspeed(); }
 
 	// Mic emulation
 	if (keys[SDL_SCANCODE_SPACE]) { controllers->pad[1].mic = 0x04; }
@@ -425,6 +428,8 @@ void nstsdl_input_conf_defaults() {
 	ui.reset = SDL_GetScancodeFromName("F12");
 	
 	ui.ffspeedtoggle = SDL_GetScancodeFromName("F7");
+	ui.incrementffspeed = SDL_GetScancodeFromName("F6");
+	ui.decrementffspeed = SDL_GetScancodeFromName("F5");
 	ui.ffspeed = SDL_GetScancodeFromName("Left Ctrl");
 	ui.rwstart = SDL_GetScancodeFromName("Backspace");
 	ui.rwstop = SDL_GetScancodeFromName("\\");
@@ -552,6 +557,8 @@ static int nstsdl_input_config_match(void* user, const char* section, const char
 	else if (MATCH("ui", "reset")) { pconfig->reset = strdup(value); }
 	
 	else if (MATCH("ui", "ffspeedtoggle")) { pconfig->ffspeedtoggle = strdup(value); }
+	else if (MATCH("ui", "incrementffspeed")) { pconfig->incrementffspeed = strdup(value); }
+	else if (MATCH("ui", "decrementffspeed")) { pconfig->decrementffspeed = strdup(value); }
 	else if (MATCH("ui", "ffspeed")) { pconfig->ffspeed = strdup(value); }
 	else if (MATCH("ui", "rwstart")) { pconfig->rwstart = strdup(value); }
 	else if (MATCH("ui", "rwstop")) { pconfig->rwstop = strdup(value); }
@@ -654,6 +661,8 @@ void nstsdl_input_conf_read() {
 		ui.reset = SDL_GetScancodeFromName(inputconf.reset);
 		
 		ui.ffspeedtoggle = SDL_GetScancodeFromName(inputconf.ffspeedtoggle);
+		ui.incrementffspeed = SDL_GetScancodeFromName(inputconf.incrementffspeed);
+		ui.decrementffspeed = SDL_GetScancodeFromName(inputconf.decrementffspeed);
 		ui.ffspeed = SDL_GetScancodeFromName(inputconf.ffspeed);
 		ui.rwstart = SDL_GetScancodeFromName(inputconf.rwstart);
 		ui.rwstop = SDL_GetScancodeFromName(inputconf.rwstop);
@@ -757,6 +766,8 @@ void nstsdl_input_conf_write() {
 		fprintf(fp, "reset=%s\n", SDL_GetScancodeName(ui.reset));
 		
 		fprintf(fp, "ffspeedtoggle=%s\n", SDL_GetScancodeName(ui.ffspeedtoggle));
+		fprintf(fp, "incrementffspeed=%s\n", SDL_GetScancodeName(ui.incrementffspeed));
+		fprintf(fp, "decrementffspeed=%s\n", SDL_GetScancodeName(ui.decrementffspeed));
 		fprintf(fp, "ffspeed=%s\n", SDL_GetScancodeName(ui.ffspeed));
 		fprintf(fp, "rwstart=%s\n", SDL_GetScancodeName(ui.rwstart));
 		fprintf(fp, "rwstop=%s\n", SDL_GetScancodeName(ui.rwstop));
