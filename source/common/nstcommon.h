@@ -91,6 +91,10 @@ void nst_state_load(char *filename);
 void nst_state_quicksave(int isvst);
 void nst_state_quickload(int isvst);
 
+// Volume
+void nst_volume_up();
+void nst_volume_down();
+
 // Timing
 int nst_timing_runframes();
 int nst_increment_timing_ffspeed();

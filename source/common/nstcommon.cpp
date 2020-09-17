@@ -842,6 +842,39 @@ int nst_decrement_timing_ffspeed() {
 	return nst_timing_runframes();
 }
 
+void nst_set_volume(int volume) {
+	if (volume > 100) { volume = 100; }
+	else if (volume < 0) { volume = 0; }
+
+	// Set volume
+	conf.audio_volume = volume;
+	conf.audio_vol_sq1 = volume;
+	conf.audio_vol_sq2 = volume;
+	conf.audio_vol_tri = volume;
+	conf.audio_vol_noise = volume;
+	conf.audio_vol_dpcm = volume;
+	conf.audio_vol_fds = volume;
+	conf.audio_vol_mmc5 = volume;
+	conf.audio_vol_vrc6 = volume;
+	conf.audio_vol_vrc7 = volume;
+	conf.audio_vol_n163 = volume;
+	conf.audio_vol_s5b = volume;
+
+	audio_adj_volume();
+
+	fprintf(stderr, "Volume Set to %d\n", conf.audio_volume);
+}
+
+void nst_volume_up() {
+	nst_set_volume(conf.audio_volume + 5);
+	nst_video_print("Volume Up", 8, 212, 2, true);
+}
+
+void nst_volume_down() {
+	nst_set_volume(conf.audio_volume - 5);
+	nst_video_print("Volume Down", 8, 212, 2, true);
+}
+
 void nst_timing_toggle_ffspeed() {
 	// Flip ffspeed flag
 	ffspeed = !ffspeed;

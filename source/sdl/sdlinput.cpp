@@ -159,6 +159,10 @@ void nstsdl_input_match_keyboard(Input::Controllers *controllers, SDL_Event even
 	
 	const Uint8 *keys = SDL_GetKeyboardState(NULL);
 	
+	// Volume control
+	if (keys[ui.volumeup]) { nst_volume_up(); }
+	if (keys[ui.volumedown]) { nst_volume_down(); }
+
 	// ffspeed
 	if (keys[ui.ffspeedtoggle]) { nst_timing_toggle_ffspeed(); }
 	if (keys[ui.incrementffspeed]) { nst_increment_timing_ffspeed(); }
@@ -426,7 +430,10 @@ void nstsdl_input_conf_defaults() {
 	ui.insertcoin2 = SDL_GetScancodeFromName("F2");
 	
 	ui.reset = SDL_GetScancodeFromName("F12");
-	
+
+	ui.volumeup = SDL_GetScancodeFromName("=");
+	ui.volumedown = SDL_GetScancodeFromName("-");
+
 	ui.ffspeedtoggle = SDL_GetScancodeFromName("F7");
 	ui.incrementffspeed = SDL_GetScancodeFromName("F6");
 	ui.decrementffspeed = SDL_GetScancodeFromName("F5");
@@ -556,6 +563,9 @@ static int nstsdl_input_config_match(void* user, const char* section, const char
 	
 	else if (MATCH("ui", "reset")) { pconfig->reset = strdup(value); }
 	
+	else if (MATCH("ui", "volumeup")) { pconfig->volumeup = strdup(value); }
+	else if (MATCH("ui", "volumedown")) { pconfig->volumedown = strdup(value); }
+
 	else if (MATCH("ui", "ffspeedtoggle")) { pconfig->ffspeedtoggle = strdup(value); }
 	else if (MATCH("ui", "incrementffspeed")) { pconfig->incrementffspeed = strdup(value); }
 	else if (MATCH("ui", "decrementffspeed")) { pconfig->decrementffspeed = strdup(value); }
@@ -659,6 +669,9 @@ void nstsdl_input_conf_read() {
 		ui.insertcoin2 = SDL_GetScancodeFromName(inputconf.insertcoin2);
 		
 		ui.reset = SDL_GetScancodeFromName(inputconf.reset);
+		
+		ui.volumeup = SDL_GetScancodeFromName(inputconf.volumeup);
+		ui.volumedown = SDL_GetScancodeFromName(inputconf.volumedown);
 		
 		ui.ffspeedtoggle = SDL_GetScancodeFromName(inputconf.ffspeedtoggle);
 		ui.incrementffspeed = SDL_GetScancodeFromName(inputconf.incrementffspeed);
@@ -764,6 +777,9 @@ void nstsdl_input_conf_write() {
 		fprintf(fp, "insertcoin2=%s\n", SDL_GetScancodeName(ui.insertcoin2));
 		
 		fprintf(fp, "reset=%s\n", SDL_GetScancodeName(ui.reset));
+		
+		fprintf(fp, "volumeup=%s\n", SDL_GetScancodeName(ui.volumeup));
+		fprintf(fp, "volumedown=%s\n", SDL_GetScancodeName(ui.volumedown));
 		
 		fprintf(fp, "ffspeedtoggle=%s\n", SDL_GetScancodeName(ui.ffspeedtoggle));
 		fprintf(fp, "incrementffspeed=%s\n", SDL_GetScancodeName(ui.incrementffspeed));

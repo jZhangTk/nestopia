@@ -64,6 +64,9 @@ typedef struct {
 	
 	SDL_Scancode reset;
 	
+	SDL_Scancode volumeup;
+	SDL_Scancode volumedown;
+	
 	SDL_Scancode ffspeedtoggle;
 	SDL_Scancode incrementffspeed;
 	SDL_Scancode decrementffspeed;
@@ -108,6 +111,9 @@ typedef struct {
 	char *insertcoin2;
 	
 	char *reset;
+	
+	char *volumeup;
+	char *volumedown;
 	
 	char *ffspeedtoggle;
 	char *incrementffspeed;
