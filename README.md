@@ -26,6 +26,10 @@ Optional dependencies:
 ```
 apt-get install libao-dev libjack-dev libgtk-3-dev
 ```
+For OS X, install dependencies using homebrew:
+```
+brew install autoconf automake autoconf-archive pkg-config libarchive libepoxy
+```
 
 ## Building
 To build using Autotools (optional arguments in square brackets):
